@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
+from django.utils import timezone
 
 from .models import SolicitudContacto, UsuarioPermitido, CodigoValidacion
 from .forms import (
@@ -25,6 +26,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .serializers import SolicitudContactoSerializer, RecetaExternaSerializer
+
 
 def inicio(request):
     return render(request, 'website/inicio.html')
@@ -60,19 +62,24 @@ def contacto(request):
     if request.method == 'POST':
         form = ContactoForm(request.POST)
 
-        # 1. Todo el proceso de envío DEBE estar dentro del form.is_valid()
         if form.is_valid():
             solicitud = form.save()
 
             nombre = solicitud.nombre
             email = solicitud.email
+            fecha_local = timezone.localtime(solicitud.fecha_envio).strftime('%d/%m/%Y %H:%M')
 
-            # 2. Adaptamos el asunto y mensaje para que sea una confirmación hacia el usuario
             asunto = f"¡Hemos recibido tu consulta, {nombre}! - La Nonna"
             cuerpo_mensaje = (
                 f"Hola {nombre},\n\n"
                 "Gracias por comunicarte con La Nonna. Te escribimos para confirmarte que "
-                "hemos recibido tu mensaje correctamente. Nos pondremos en contacto a la brevedad.\n\n"
+                "hemos recibido tu mensaje correctamente. Dejamos el detalle de los datos cargados:\n\n"
+                f"- Nombre y apellido: {solicitud.nombre}\n"
+                f"- Email: {solicitud.email}\n"
+                f"- Categoría asignada: {solicitud.categoria}\n"
+                f"- Fecha de envío: {fecha_local}\n"
+                f"- Mensaje:{solicitud.mensaje}\n\n"
+                "Nos pondremos en contacto a la brevedad.\n\n"
                 "Saludos cordiales,\n"
                 "La Nonna - Pastas Artesanales"
             )
@@ -86,12 +93,12 @@ def contacto(request):
                     fail_silently=False,
                 )
 
-                messages.success(request, '¡Gracias! Hemos recibido tu mensaje')
+                messages.success(request, '¡Tu consulta fue enviada! Te enviamos un email de confirmación con el detalle')
                 return redirect('contacto')
 
             except Exception as e:
                 # Si falla el servidor de correos, avisa al usuario en pantalla
-                messages.error(request, f'Hubo un problema al enviar el correo de confirmación: {e}')
+                messages.error(request, f'Tu consulta quedó registrada correctamente, pero en este momento no se pudo enviar el email de confirmación.: {e}')
 
             return redirect('contacto')
 

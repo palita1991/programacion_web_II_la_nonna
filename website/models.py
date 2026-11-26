@@ -1,3 +1,4 @@
+import re
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -34,15 +35,15 @@ class SolicitudContacto(models.Model):
     def clasificacion_mensaje(self):
         texto = self.mensaje.lower()
 
-        palabras_comercial = ('precio', 'costo', 'tarifa', 'compra')
-        palabras_tecnica = ('soporte', 'error', 'problema', 'ayuda')
-        palabras_rrhh = ('trabajo', 'cv', 'empleo', 'linkedin')
+        patron_comercial = r'\b(precios?|costos?|tarifas?|compras?)\b'
+        patron_tecnica = r'\b(soportes?|error(?:es)?|problemas?|ayudas?)\b'
+        patron_rrhh = r'\b(trabajos?|cvs?|empleos?|linkedin)\b'
 
-        if any(palabra in texto for palabra in palabras_comercial):
+        if re.search(patron_comercial, texto):
             return self.CATEGORIA_COMERCIAL
-        elif any(palabra in texto for palabra in palabras_tecnica):
+        elif re.search(patron_tecnica, texto):
             return self.CATEGORIA_TECNICA
-        elif any(palabra in texto for palabra in palabras_rrhh):
+        elif re.search(patron_rrhh, texto):
             return self.CATEGORIA_RRHH
         else:
             return self.CATEGORIA_GENERAL

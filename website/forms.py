@@ -50,7 +50,7 @@ class RegistroForm(forms.Form):
         max_length=150,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'Ej: Anna Villegas',
+            'placeholder': 'Ej: Matias Perez',
         }),
     )
     email = forms.EmailField(

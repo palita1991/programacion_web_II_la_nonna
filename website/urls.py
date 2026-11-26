@@ -17,4 +17,6 @@ urlpatterns = [
     path('panel/nueva/', views.crear_solicitud, name='crear_solicitud'),
     path('panel/editar/<int:pk>/', views.editar_solicitud, name='editar_solicitud'),
     path('panel/eliminar/<int:pk>/', views.eliminar_solicitud, name='eliminar_solicitud'),
+
+    path('api/consultas/', views.ConsultasAPIView.as_view(), name='api_consultas')
 ]

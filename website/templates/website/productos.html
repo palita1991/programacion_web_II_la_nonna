@@ -4,7 +4,7 @@
 {% block title %}Nuestros Productos | La Nonna {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'website/css/website_style.css' %}">
+<link rel="stylesheet" href="{% static 'website/css/website_style.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -15,287 +15,356 @@
             <h1 class="titulo-seccion mt-2">Nuestros Productos</h1>
             <div class="separador-elegante">◆</div>
             <p class="lead mt-3 texto-destacado texto-limitado">
-                Descubrí nuestras variedades de pastas frescas, elaboradas con sémola de trigo duro y rellenos 100% naturales.
+                Descubrí nuestras variedades de pastas frescas, elaboradas con sémola de trigo duro y rellenos 100%
+                naturales.
             </p>
         </div>
-
         <div class="row g-4">
-            <!-- Producto 1 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card producto-card shadow-sm h-100 position-relative">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/productos/ravioles.jpg' %}" alt="Ravioles de Carne y Verdura">
-                    </div>
-                    <div class="card-body p-4 text-center d-flex flex-column">
-                        <h3 class="h4 mb-2">Ravioles Clásicos</h3>
-                        <p class="text-muted mb-4 texto-chico">Rellenos de carne seleccionada y espinaca fresca.</p>
+                <!-- Producto 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card producto-card shadow-sm h-100 position-relative">
+                        <div class="img-wrapper">
+                            <img src="{% static 'website/img/productos/ravioles.jpg' %}"
+                                 alt="Ravioles de Carne y Verdura">
+                        </div>
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <h3 class="h4 mb-2">Ravioles Clásicos</h3>
+                            <p class="text-muted mb-4 texto-chico">Rellenos de carne seleccionada y espinaca fresca.</p>
 
-                        <!-- Botón de acción (Expansión en línea) -->
-                        <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#recetaRavioles"
-                                aria-expanded="false">
-                            Ver cocción y sugerencia
-                        </button>
+                            <!-- Botón de acción (Expansión en línea) -->
+                            <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#recetaRavioles"
+                                    aria-expanded="false">
+                                Ver cocción y sugerencia
+                            </button>
 
-                        <!-- Contenido desplegable (Collapse) -->
-                        <div class="collapse mt-3 w-100" id="recetaRavioles">
-                            <div class="receta-box shadow-sm">
-                                <!-- Tiempo de Cocción -->
-                                <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
-                                <p class="texto-chico mb-3">4 a 5 minutos en abundante agua hirviendo con sal. Retirar con espumadera (no colar) para que no se rompan.</p>
+                            <!-- Contenido desplegable (Collapse) -->
+                            <div class="collapse mt-3 w-100" id="recetaRavioles">
+                                <div class="receta-box shadow-sm">
+                                    <!-- Tiempo de Cocción -->
+                                    <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
+                                    <p class="texto-chico mb-3">4 a 5 minutos en abundante agua hirviendo con sal.
+                                        Retirar con espumadera (no colar) para que no se rompan.</p>
 
-                                <!-- Receta Sugerida -->
-                                <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
-                                <p class="texto-chico mb-0">Salsa fileto tradicional, un hilo de aceite de oliva, hojas de albahaca fresca y queso reggianito recién rallado.</p>
+                                    <!-- Receta Sugerida -->
+                                    <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
+                                    <p class="texto-chico mb-0">Salsa fileto tradicional, un hilo de aceite de oliva,
+                                        hojas de albahaca fresca y queso reggianito recién rallado.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Producto 2 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card producto-card shadow-sm h-100 position-relative">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/productos/sorrentinos.jpg' %}" alt="Sorrentinos de Jamón y Queso">
-                    </div>
-                    <div class="card-body p-4 text-center d-flex flex-column">
-                        <h3 class="h4 mb-2">Sorrentinos</h3>
-                        <p class="text-muted mb-4 texto-chico">Abundante relleno de jamón cocido y mozzarella.</p>
+                <!-- Producto 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card producto-card shadow-sm h-100 position-relative">
+                        <div class="img-wrapper">
+                            <img src="{% static 'website/img/productos/sorrentinos.jpg' %}"
+                                 alt="Sorrentinos de Jamón y Queso">
+                        </div>
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <h3 class="h4 mb-2">Sorrentinos</h3>
+                            <p class="text-muted mb-4 texto-chico">Abundante relleno de jamón cocido y mozzarella.</p>
 
-                        <!-- Botón de acción (Expansión en línea) -->
-                        <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#recetaSorrentinos"
-                                aria-expanded="false">
-                            Ver cocción y sugerencia
-                        </button>
+                            <!-- Botón de acción (Expansión en línea) -->
+                            <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#recetaSorrentinos"
+                                    aria-expanded="false">
+                                Ver cocción y sugerencia
+                            </button>
 
-                        <!-- Contenido desplegable (Collapse) -->
-                        <div class="collapse mt-3 w-100" id="recetaSorrentinos">
-                            <div class="receta-box shadow-sm">
-                                <!-- Tiempo de Cocción -->
-                                <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
-                                <p class="texto-chico mb-3">6 a 7 minutos a fuego medio. El agua no debe hervir violentamente para que la masa no se abra.</p>
+                            <!-- Contenido desplegable (Collapse) -->
+                            <div class="collapse mt-3 w-100" id="recetaSorrentinos">
+                                <div class="receta-box shadow-sm">
+                                    <!-- Tiempo de Cocción -->
+                                    <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
+                                    <p class="texto-chico mb-3">6 a 7 minutos a fuego medio. El agua no debe hervir
+                                        violentamente para que la masa no se abra.</p>
 
-                                <!-- Receta Sugerida -->
-                                <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
-                                <p class="texto-chico mb-0">Crema de champiñones o salsa mixta (fileto y crema) para equilibrar el relleno.</p>
+                                    <!-- Receta Sugerida -->
+                                    <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
+                                    <p class="texto-chico mb-0">Crema de champiñones o salsa mixta (fileto y crema) para
+                                        equilibrar el relleno.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Producto 3 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card producto-card shadow-sm h-100 position-relative">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/productos/noquis.jpg' %}" alt="Ñoquis de Papa">
-                    </div>
-                    <div class="card-body p-4 text-center d-flex flex-column">
-                        <h3 class="h4 mb-2">Ñoquis de Papa</h3>
-                        <p class="text-muted mb-4 texto-chico">Suaves y livianos, elaborados con papas de la zona.</p>
+                <!-- Producto 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card producto-card shadow-sm h-100 position-relative">
+                        <div class="img-wrapper">
+                            <img src="{% static 'website/img/productos/noquis.jpg' %}" alt="Ñoquis de Papa">
+                        </div>
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <h3 class="h4 mb-2">Ñoquis de Papa</h3>
+                            <p class="text-muted mb-4 texto-chico">Suaves y livianos, elaborados con papas de la
+                                zona.</p>
 
-                        <!-- Botón de acción (Expansión en línea) -->
-                        <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#recetaNoquis"
-                                aria-expanded="false">
-                            Ver cocción y sugerencia
-                        </button>
+                            <!-- Botón de acción (Expansión en línea) -->
+                            <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#recetaNoquis"
+                                    aria-expanded="false">
+                                Ver cocción y sugerencia
+                            </button>
 
-                        <!-- Contenido desplegable (Collapse) -->
-                        <div class="collapse mt-3 w-100" id="recetaNoquis">
-                            <div class="receta-box shadow-sm">
-                                <!-- Tiempo de Cocción -->
-                                <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
-                                <p class="texto-chico mb-3">¡Muy rápido! Cuando el agua hierva a borbotones, echarlos. Ni bien suben a la superficie (1-2 minutos), retirarlos</p>
+                            <!-- Contenido desplegable (Collapse) -->
+                            <div class="collapse mt-3 w-100" id="recetaNoquis">
+                                <div class="receta-box shadow-sm">
+                                    <!-- Tiempo de Cocción -->
+                                    <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
+                                    <p class="texto-chico mb-3">¡Muy rápido! Cuando el agua hierva a borbotones,
+                                        echarlos. Ni bien suben a la superficie (1-2 minutos), retirarlos</p>
 
-                                <!-- Receta Sugerida -->
-                                <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
-                                <p class="texto-chico mb-0">Salsa bolognesa rica y espesa, o simplemente salteados en manteca y salvia.</p>
+                                    <!-- Receta Sugerida -->
+                                    <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
+                                    <p class="texto-chico mb-0">Salsa bolognesa rica y espesa, o simplemente salteados
+                                        en manteca y salvia.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Producto 4 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card producto-card shadow-sm h-100 position-relative">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/productos/fideos.jpg' %}" alt="Fideos al Huevo">
-                    </div>
-                    <div class="card-body p-4 text-center d-flex flex-column">
-                        <h3 class="h4 mb-2">Fideos al Huevo</h3>
-                        <p class="text-muted texto-chico mb-4">Cintas anchas tradicionales al estilo italiano.</p>
+                <!-- Producto 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card producto-card shadow-sm h-100 position-relative">
+                        <div class="img-wrapper">
+                            <img src="{% static 'website/img/productos/fideos.jpg' %}" alt="Fideos al Huevo">
+                        </div>
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <h3 class="h4 mb-2">Fideos al Huevo</h3>
+                            <p class="text-muted texto-chico mb-4">Cintas anchas tradicionales al estilo italiano.</p>
 
-                        <!-- Botón de acción (Expansión en línea) -->
-                        <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#recetaFideosHuevo"
-                                aria-expanded="false">
-                            Ver cocción y sugerencia
-                        </button>
+                            <!-- Botón de acción (Expansión en línea) -->
+                            <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#recetaFideosHuevo"
+                                    aria-expanded="false">
+                                Ver cocción y sugerencia
+                            </button>
 
-                        <!-- Contenido desplegable (Collapse) -->
-                        <div class="collapse mt-3 w-100" id="recetaFideosHuevo">
-                            <div class="receta-box shadow-sm">
-                                <!-- Tiempo de Cocción -->
-                                <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
-                                <p class="texto-chico mb-3">¡Muy rápida! Al ser pasta fresca, en 3 a 4 minutos en agua hirviendo con sal estarán al dente.</p>
+                            <!-- Contenido desplegable (Collapse) -->
+                            <div class="collapse mt-3 w-100" id="recetaFideosHuevo">
+                                <div class="receta-box shadow-sm">
+                                    <!-- Tiempo de Cocción -->
+                                    <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
+                                    <p class="texto-chico mb-3">¡Muy rápida! Al ser pasta fresca, en 3 a 4 minutos en
+                                        agua hirviendo con sal estarán al dente.</p>
 
-                                <!-- Receta Sugerida -->
-                                <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
-                                <p class="texto-chico mb-0">El clásico estofado de carne de los domingos o un buen pesto genovese con aceite de oliva extra virgen.</p>
+                                    <!-- Receta Sugerida -->
+                                    <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
+                                    <p class="texto-chico mb-0">El clásico estofado de carne de los domingos o un buen
+                                        pesto genovese con aceite de oliva extra virgen.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Producto 5 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card producto-card shadow-sm h-100 position-relative">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/productos/lasana.jpg' %}" alt="Lasaña Lista">
-                    </div>
-                    <div class="card-body p-4 text-center">
-                        <h3 class="h4 mb-2">Lasaña Lista</h3>
-                        <p class="text-muted texto-chico mb-4">Capas de pasta, salsa bolognesa, bechamel y queso.</p>
+                <!-- Producto 5 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card producto-card shadow-sm h-100 position-relative">
+                        <div class="img-wrapper">
+                            <img src="{% static 'website/img/productos/lasana.jpg' %}" alt="Lasaña Lista">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h4 mb-2">Lasaña Lista</h3>
+                            <p class="text-muted texto-chico mb-4">Capas de pasta, salsa bolognesa, bechamel y
+                                queso.</p>
 
-                        <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#recetaLasana"
-                                aria-expanded="false">
-                            Ver cocción y sugerencia
-                        </button>
+                            <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#recetaLasana"
+                                    aria-expanded="false">
+                                Ver cocción y sugerencia
+                            </button>
 
-                        <div class="collapse mt-3 w-100" id="recetaLasana">
-                            <div class="receta-box shadow-sm text-start">
-                                <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
-                                <p class="texto-chico mb-3">Retirar el envoltorio y llevar directo al horno precalentado a 200°C (fuego medio-fuerte) durante 20 a 25 minutos, hasta lograr un gratinado dorado y burbujeante.</p>
+                            <div class="collapse mt-3 w-100" id="recetaLasana">
+                                <div class="receta-box shadow-sm text-start">
+                                    <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
+                                    <p class="texto-chico mb-3">Retirar el envoltorio y llevar directo al horno
+                                        precalentado a 200°C (fuego medio-fuerte) durante 20 a 25 minutos, hasta lograr
+                                        un gratinado dorado y burbujeante.</p>
 
-                                <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
-                                <p class="texto-chico mb-0">No necesita salsas extra. Acompañala con una copa de vino tinto malbec y una rodaja de pan casero apenas tostado para limpiar el plato.</p>
+                                    <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
+                                    <p class="texto-chico mb-0">No necesita salsas extra. Acompañala con una copa de
+                                        vino tinto malbec y una rodaja de pan casero apenas tostado para limpiar el
+                                        plato.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Producto 6-->
-            <div class="col-md-6 col-lg-3">
-                <div class="card producto-card shadow-sm h-100 position-relative">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/productos/agnolottis.jpg' %}" alt="Agnolottis de Calabaza">
-                    </div>
-                    <div class="card-body p-4 text-center d-flex flex-column">
-                        <h3 class="h4 mb-2">Agnolottis</h3>
-                        <p class="text-muted texto-chico mb-4">Masa rellena de calabaza asada, queso parmesano y nueces.</p>
+                <!-- Producto 6-->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card producto-card shadow-sm h-100 position-relative">
+                        <div class="img-wrapper">
+                            <img src="{% static 'website/img/productos/agnolottis.jpg' %}" alt="Agnolottis de Calabaza">
+                        </div>
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <h3 class="h4 mb-2">Agnolottis</h3>
+                            <p class="text-muted texto-chico mb-4">Masa rellena de calabaza asada, queso parmesano y
+                                nueces.</p>
 
-                        <!-- Botón de acción (Expansión en línea) -->
-                        <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#recetaAgnolottis"
-                                aria-expanded="false">
-                            Ver cocción y sugerencia
-                        </button>
+                            <!-- Botón de acción (Expansión en línea) -->
+                            <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#recetaAgnolottis"
+                                    aria-expanded="false">
+                                Ver cocción y sugerencia
+                            </button>
 
-                        <!-- Contenido desplegable (Collapse) -->
-                        <div class="collapse mt-3 w-100" id="recetaAgnolottis">
-                            <div class="receta-box shadow-sm">
-                                <!-- Tiempo de Cocción -->
-                                <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
-                                <p class="texto-chico mb-3">5 a 6 minutos a hervor suave. Como el relleno es dulce y delicado, el agua no debe burbujear fuerte para que no se desarmen.</p>
+                            <!-- Contenido desplegable (Collapse) -->
+                            <div class="collapse mt-3 w-100" id="recetaAgnolottis">
+                                <div class="receta-box shadow-sm">
+                                    <!-- Tiempo de Cocción -->
+                                    <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
+                                    <p class="texto-chico mb-3">5 a 6 minutos a hervor suave. Como el relleno es dulce y
+                                        delicado, el agua no debe burbujear fuerte para que no se desarmen.</p>
 
-                                <!-- Receta Sugerida -->
-                                <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
-                                <p class="texto-chico mb-0">Manteca fundida (ligeramente tostada) con hojas de salvia fresca, o una crema ligera con nueces picadas.</p>
+                                    <!-- Receta Sugerida -->
+                                    <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
+                                    <p class="texto-chico mb-0">Manteca fundida (ligeramente tostada) con hojas de
+                                        salvia fresca, o una crema ligera con nueces picadas.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Producto 7 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card producto-card shadow-sm h-100 position-relative">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/productos/cintas-espinaca.jpg' %}" alt="Cintas de Espinaca">
-                    </div>
-                    <div class="card-body p-4 text-center d-flex flex-column">
-                        <h3 class="h4 mb-2">Cintas Verdes</h3>
-                        <p class="text-muted mb-4 texto-chico">Fideos largos elaborados con masa de espinaca 100% natural.</p>
+                <!-- Producto 7 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card producto-card shadow-sm h-100 position-relative">
+                        <div class="img-wrapper">
+                            <img src="{% static 'website/img/productos/cintas-espinaca.jpg' %}"
+                                 alt="Cintas de Espinaca">
+                        </div>
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <h3 class="h4 mb-2">Cintas Verdes</h3>
+                            <p class="text-muted mb-4 texto-chico">Fideos largos elaborados con masa de espinaca 100%
+                                natural.</p>
 
-                        <!-- Botón de acción (Expansión en línea) -->
-                        <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#recetaCintasVerdes"
-                                aria-expanded="false">
-                            Ver cocción y sugerencia
-                        </button>
+                            <!-- Botón de acción (Expansión en línea) -->
+                            <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#recetaCintasVerdes"
+                                    aria-expanded="false">
+                                Ver cocción y sugerencia
+                            </button>
 
-                        <!-- Contenido desplegable (Collapse) -->
-                        <div class="collapse mt-3 w-100" id="recetaCintasVerdes">
-                            <div class="receta-box shadow-sm">
-                                <!-- Tiempo de Cocción -->
-                                <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
-                                <p class="texto-chico mb-3">Al dente en 3 a 4 minutos.</p>
+                            <!-- Contenido desplegable (Collapse) -->
+                            <div class="collapse mt-3 w-100" id="recetaCintasVerdes">
+                                <div class="receta-box shadow-sm">
+                                    <!-- Tiempo de Cocción -->
+                                    <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
+                                    <p class="texto-chico mb-3">Al dente en 3 a 4 minutos.</p>
 
-                                <!-- Receta Sugerida -->
-                                <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
-                                <p class="texto-chico mb-0">Salteadas en aceite de oliva con ajo, tomates cherry asados y nueces picadas.</p>
+                                    <!-- Receta Sugerida -->
+                                    <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
+                                    <p class="texto-chico mb-0">Salteadas en aceite de oliva con ajo, tomates cherry
+                                        asados y nueces picadas.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Producto 8 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card producto-card shadow-sm h-100 position-relative">
-                    <div class="img-wrapper">
-                        <img src="{% static 'website/img/productos/malfattis.jpg' %}" alt="Malfattis Caseros">
-                    </div>
-                    <div class="card-body p-4 text-center d-flex flex-column">
-                        <h3 class="h4 mb-2">Malfattis Caseros</h3>
-                        <p class="text-muted texto-chico mb-4">Bocados de ricota y espinaca, moldeados a mano uno por uno.</p>
+                <!-- Producto 8 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card producto-card shadow-sm h-100 position-relative">
+                        <div class="img-wrapper">
+                            <img src="{% static 'website/img/productos/malfattis.jpg' %}" alt="Malfattis Caseros">
+                        </div>
+                        <div class="card-body p-4 text-center d-flex flex-column">
+                            <h3 class="h4 mb-2">Malfattis Caseros</h3>
+                            <p class="text-muted texto-chico mb-4">Bocados de ricota y espinaca, moldeados a mano uno
+                                por uno.</p>
 
-                        <!-- Botón de acción (Expansión en línea) -->
-                        <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#recetaMalfattis"
-                                aria-expanded="false">
-                            Ver cocción y sugerencia
-                        </button>
+                            <!-- Botón de acción (Expansión en línea) -->
+                            <button class="btn btn-sm btn-outline-bordo w-100 mt-2 rounded-pill fw-medium"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#recetaMalfattis"
+                                    aria-expanded="false">
+                                Ver cocción y sugerencia
+                            </button>
 
-                        <!-- Contenido desplegable (Collapse) -->
-                        <div class="collapse mt-3 w-100" id="recetaMalfattis">
-                            <div class="receta-box shadow-sm">
-                                <!-- Tiempo de Cocción -->
-                                <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
-                                <p class="texto-chico mb-3">Funcionan igual que los ñoquis. Echarlos al agua hirviendo y, en cuanto suban a la superficie (2 a 3 minutos), retirarlos con mucho cuidado usando espumadera, ya que son muy tiernos.</p>
+                            <!-- Contenido desplegable (Collapse) -->
+                            <div class="collapse mt-3 w-100" id="recetaMalfattis">
+                                <div class="receta-box shadow-sm">
+                                    <!-- Tiempo de Cocción -->
+                                    <h4 class="h6 fw-bold mb-1">⏱ Cocción ideal</h4>
+                                    <p class="texto-chico mb-3">Funcionan igual que los ñoquis. Echarlos al agua
+                                        hirviendo y, en cuanto suban a la superficie (2 a 3 minutos), retirarlos con
+                                        mucho cuidado usando espumadera, ya que son muy tiernos.</p>
 
-                                <!-- Sugerencia-->
-                                <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
-                                <p class="texto-chico mb-0">Gratinados al horno. Colocalos en una fuente con crema de leche, abundante queso parmesano y un toque de pimienta negra.</p>
+                                    <!-- Sugerencia-->
+                                    <h4 class="h6 fw-bold mb-1">🍝 La Nonna sugiere</h4>
+                                    <p class="texto-chico mb-0">Gratinados al horno. Colocalos en una fuente con crema
+                                        de leche, abundante queso parmesano y un toque de pimienta negra.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
+        <div class="text-center my-5">
+            <span class="subtitulo-seccion">Otras opciones gastronómicas</span>
+            <h1 class="titulo-seccion mt-2">Platos para la inspiración</h1>
+            <div class="separador-elegante">◆</div>
+            <p class="lead mt-3 texto-destacado texto-limitado">
+                Ideas clásicas de la cocina internacional para acompañar y preparar nuestras pastas artesanales.
+            </p>
         </div>
-    </div>
+        {% if error_api %}
+        <div class="alert alert-warning text-center rounded-4 shadow-sm" role="alert">
+            <i class="bi bi-wifi-off me-2"></i>
+            No hay sugerencias en este momento, intentar más tarde.
+        </div>
+        {% elif recetas_api %}
+        <div class="row g-4">
+            {% for receta in recetas_api %}
+            <div class="col-12 col-sm-6 col-lg-4">
+                <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden api-receta-card">
+                    <div class="api-receta-img-wrapper">
+                        <img src="{{ receta.imagen }}"
+                             alt="{{ receta.nombre }}"
+                             class="w-100 h-100 object-fit-cover"
+                             loading="lazy">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between bg-blanco">
+                        <div>
+                                    <span class="badge rounded-pill badge-cat badge-comercial mb-2">
+                                        Pastas
+                                    </span>
+                            <h3 class="h5 fw-bold mb-3">{{ receta.nombre }}</h3>
+                        </div>
+                        <a href="{{ receta.url_receta }}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-sm btn-outline-dark rounded-pill align-self-start px-3">
+                            Ver receta <i class="bi bi-box-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
 </section>
 {% endblock %}

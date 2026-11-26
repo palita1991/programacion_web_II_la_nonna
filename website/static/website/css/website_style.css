@@ -248,3 +248,21 @@ PANEL INTERNO Y ESTADÍSTICAS
 .texto-error {
     color: var(--bordo);
 }
+
+
+.api-intro-texto {
+    max-width: 620px;
+}
+
+.api-receta-img-wrapper {
+    height: 220px;
+    overflow: hidden;
+}
+
+.api-receta-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.api-receta-card:hover {
+    transform: translateY(-4px);
+}

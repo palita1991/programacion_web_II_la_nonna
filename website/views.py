@@ -1,15 +1,3 @@
-
-def inicio(request):
-    return render(request, 'website/inicio.html')
-
-
-def productos(request):
-    return render(request, 'website/productos.html')
-
-
-def sobre_nosotros(request):
-    return render(request, 'website/sobre_nosotros.html')
-
 import secrets
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
@@ -30,6 +18,43 @@ from .forms import (
     LoginEmailForm,
 )
 
+import requests
+from rest_framework import status
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from .serializers import SolicitudContactoSerializer, RecetaExternaSerializer
+
+def inicio(request):
+    return render(request, 'website/inicio.html')
+
+API_RECETAS_PASTA_URL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta'
+
+def obtener_recetas_pasta_drf(limite=6):
+    try:
+        respuesta = requests.get(API_RECETAS_PASTA_URL, timeout=5)
+        respuesta.raise_for_status()
+        datos = respuesta.json().get('meals') or []
+    except (requests.RequestException, ValueError):
+        return [], True
+
+    serializer = RecetaExternaSerializer(data=datos[:limite], many=True)
+    if serializer.is_valid():
+        return serializer.data, False
+
+    return [], True
+
+def productos(request):
+    recetas_api, error_api = obtener_recetas_pasta_drf(limite=6)
+    return render(request, 'website/productos.html', {
+        'recetas_api': recetas_api,
+        'error_api': error_api,
+    })
+
+
+def sobre_nosotros(request):
+    return render(request, 'website/sobre_nosotros.html')
 
 def contacto(request):
     if request.method == 'POST':
@@ -344,3 +369,11 @@ def cerrar_sesion(request):
         logout(request)
         messages.info(request, 'Cerraste sesión correctamente.')
     return redirect('inicio')
+
+class ConsultasAPIView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        solicitudes = SolicitudContacto.objects.all()
+        serializer = SolicitudContactoSerializer(solicitudes, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

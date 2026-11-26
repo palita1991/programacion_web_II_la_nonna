@@ -113,63 +113,63 @@ else:
         }
     }
 
-    # Password validation
-    # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
+# Password validation
+# https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
 
-    AUTH_PASSWORD_VALIDATORS = [
-        {
-            'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-        },
-        {
-            'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        },
-        {
-            'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-        },
-        {
-            'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-        },
-    ]
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
 
-    # Internationalization
-    # https://docs.djangoproject.com/en/6.1/topics/i18n/
+# Internationalization
+# https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-    LANGUAGE_CODE = 'es-ar'
-    TIME_ZONE = 'America/Argentina/Buenos_Aires'
+LANGUAGE_CODE = 'es-ar'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
-    USE_I18N = True
+USE_I18N = True
 
-    USE_TZ = True
+USE_TZ = True
 
-    # Autenticación
-    LOGIN_URL = 'iniciar_sesion'
-    LOGIN_REDIRECT_URL = 'panel_solicitudes'
-    LOGOUT_REDIRECT_URL = 'inicio'
+# Autenticación
+LOGIN_URL = 'iniciar_sesion'
+LOGIN_REDIRECT_URL = 'panel_solicitudes'
+LOGOUT_REDIRECT_URL = 'inicio'
 
-    # Static files (CSS, JavaScript, Images)
-    # https://docs.djangoproject.com/en/6.1/howto/static-files/
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-    STATIC_URL = 'static/'
-    STATICFILES_DIRS = [BASE_DIR / 'static']
-    STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-    STORAGES = {
-        'default': {
-            'BACKEND': 'django.core.files.storage.FileSystemStorage',
-        },
-        'staticfiles': {
-            'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
-        },
-    }
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
+    },
+}
 
-    # Email
-    # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
+# Email
+# https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'c2280296.ferozo.com'
-    EMAIL_PORT = int(os.getenv('EMAIL_PORT', 465))
-    EMAIL_USE_SSL = True
-    EMAIL_USE_TLS = False
-    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-    EMAIL_TIMEOUT = 10
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'c2280296.ferozo.com'
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 465))
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_TIMEOUT = 10

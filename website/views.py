@@ -25,8 +25,10 @@ def contacto(request):
 
         # 1. Todo el proceso de envío DEBE estar dentro del form.is_valid()
         if form.is_valid():
-            nombre = form.cleaned_data['nombre']
-            email = form.cleaned_data['email']
+            solicitud = form.save()
+
+            nombre = solicitud.nombre
+            email = solicitud.email
 
             # 2. Adaptamos el asunto y mensaje para que sea una confirmación hacia el usuario
             asunto = f"¡Hemos recibido tu consulta, {nombre}! - La Nonna"
@@ -53,6 +55,8 @@ def contacto(request):
             except Exception as e:
                 # Si falla el servidor de correos, avisa al usuario en pantalla
                 messages.error(request, f'Hubo un problema al enviar el correo de confirmación: {e}')
+
+            return redirect('contacto')
 
     else:
         form = ContactoForm()

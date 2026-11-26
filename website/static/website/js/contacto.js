@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form');
 
     if (form) {
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
             let isValid = true;
 
             const nombre = document.getElementById('id_nombre');
@@ -24,8 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
             };
 
             // Validación Nombre
-            if (nombre.value.trim().length === 0) {
-                showError(nombre, 'Por favor ingrese un nombre válido');
+            const valorNombre = nombre.value.trim();
+            const soloLetrasRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/;
+            if (valorNombre.length < 3) {
+                showError(nombre, 'El nombre debe tener al menos 3 caracteres.');
+            } else if (!soloLetrasRegex.test(valorNombre)) {
+                showError(nombre, 'El nombre no puede contener números ni caracteres especiales.');
             } else {
                 nombre.style.borderColor = 'var(--verde-oliva)';
             }
@@ -34,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email.value.trim())) {
                 showError(email, 'Por favor ingrese un email válido.');
-            } else { 
-                email.style.borderColor = 'var(--verde-oliva)'; 
+            } else {
+                email.style.borderColor = 'var(--verde-oliva)';
             }
 
             // Validación Mensaje

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Página no encontrada | La Nonna{% endblock %}
+
+{% block content %}
+<section class="py-5 d-flex align-items-center justify-content-center" style="min-height: 60vh;">
+    <div class="text-center">
+        <h1 class="fw-bold" style="font-size: 6rem; color: var(--bordo);">404</h1>
+        <h2 class="h3 mb-4" style="color: var(--marron-oscuro);">Esta receta no está en nuestro cuaderno</h2>
+        <p class="lead mb-5 text-muted" style="max-width: 500px; margin: 0 auto; font-size: 1.1rem;">
+            La página que estás buscando cambió de lugar o no existe. No te preocupes, el horno sigue encendido y nuestras pastas te esperan.
+        </p>
+        <a href="{% url 'inicio' %}" class="btn btn-primary px-4 py-3 rounded-pill fw-bold text-uppercase" style="letter-spacing: 1px;">
+            Volver al inicio
+        </a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% load static %}
+<header class="sticky-top" style="z-index: 1050;">
+        <nav class="navbar navbar-expand-lg py-3 shadow-sm navbar-curvo" style="background-color: var(--crema);">
+            <div class="container">
+                <!-- Logo / Nombre de marca -->
+                <a class="navbar-brand" href="{% url 'inicio' %}" style="color: var(--bordo); font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;">
+                    La Nonna
+                </a>
+
+                <!-- Botón hamburguesa para móviles -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Enlaces de navegación -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        {% url 'inicio' as url_inicio %}
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center {% if request.path == url_inicio %}active-link{% endif %}" href="{{ url_inicio }}">
+                                <i class="bi bi-shop me-2"></i> Inicio
+                            </a>
+                        </li>
+
+                        {% url 'productos' as url_productos %}
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center {% if request.path == url_productos %}active-link{% endif %}" href="{{ url_productos }}">
+                                <i class="bi bi-grid me-2"></i> Productos
+                            </a>
+                        </li>
+
+                        {% url 'sobre_nosotros' as url_nosotros %}
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center {% if request.path == url_nosotros %}active-link{% endif %}" href="{{ url_nosotros }}">
+                                <i class="bi bi-people me-2"></i> Sobre Nosotros
+                            </a>
+                        </li>
+
+                        {% url 'contacto' as url_contacto %}
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center {% if request.path == url_contacto %}active-link{% endif %}" href="{{ url_contacto }}">
+                                <i class="bi bi-envelope-paper me-2"></i> Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>

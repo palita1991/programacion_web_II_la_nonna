@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sobre Nosotros | La Nonna {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'website/css/website_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container my-4">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0 pe-lg-5">
+                <img src="{% static 'website/img/historia.jpg' %}" alt="Nuestra historia" class="historia-img img-medallon shadow-sm">
+            </div>
+
+            <div class="col-lg-6">
+                <span class="subtitulo-seccion">Nuestros Orígenes</span>
+                <h1 class="titulo-seccion mt-2 mb-4">De la cocina familiar a tu mesa</h1>
+
+                <p class="mb-4 historia-parrafo">
+                    <strong>La Nonna</strong> nació como un pequeño emprendimiento familiar en el corazón de nuestra cocina. Lo que comenzó compartiendo nuestras pastas caseras con los más cercanos, rápidamente se transformó en una pasión solicitada por todo el barrio.
+                </p>
+                <p class="mb-0 historia-parrafo">
+                    Hoy contamos con nuestro propio local, pero nuestra esencia sigue intacta. No somos una industria; somos artesanos del sabor. Elaboramos cada producto con el mismo amor, paciencia y dedicación que nos transmitió nuestra abuela, manteniendo viva la tradición en cada plato.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección: Nuestra Forma de Trabajar (Bloque Verde Oliva) -->
+<section class="py-5 bg-oliva arco-superior">
+    <div class="container py-5 text-center">
+        <span class="subtitulo-seccion mb-2 text-white-50">Proceso Artesanal</span>
+        <h2 class="mb-5 text-white titulo-seccion">Nuestra forma de trabajar</h2>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="p-4 border rounded-4 h-100 tarjeta-proceso">
+                    <h3 class="h4 mb-3 text-white">1. Selección</h3>
+                    <p class="mb-0 texto-chico text-white-50">Elegimos cada mañana los mejores verduras frescas, carnes magras y sémola de primera calidad.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 border rounded-4 h-100 tarjeta-proceso">
+                    <h3 class="h4 mb-3 text-white">2. Amasado</h3>
+                    <p class="mb-0 texto-chico text-white-50">Trabajamos a mano de forma artesanal para lograr esa textura suave pero firme.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 border rounded-4 h-100 tarjeta-proceso">
+                    <h3 class="h4 mb-3 text-white">3. Frescura</h3>
+                    <p class="mb-0 texto-chico text-white-50">No utilizamos conservantes ni aditivos industriales. Elaboramos cada día lo que ofrecemos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

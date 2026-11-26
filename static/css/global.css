@@ -1,0 +1,150 @@
+/* =========================================
+   COLORES
+   ========================================= */
+:root {
+    --bordo: #8B2635;
+    --crema: #F7F0E3;
+    --verde-oliva: #687259;
+    --marron-oscuro: #3E3028;
+}
+
+/* =========================================
+   FONDO GENERAL
+   ========================================= */
+body {
+    background-color: var(--crema);
+    color: var(--marron-oscuro);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* =========================================
+   TIPOGRAFIA TITULOS
+   ========================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: var(--bordo);
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.btn-primary {
+    background-color: var(--bordo);
+    border-color: var(--bordo);
+}
+
+.btn-primary:hover {
+    background-color: #6a1d28;
+    border-color: #6a1d28;
+}
+
+/* =========================================
+   SEPARADOR
+   ========================================= */
+
+.separador-elegante {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.separador-elegante::before,
+.separador-elegante::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: var(--verde-oliva);
+    margin: 0 15px;
+}
+.separador-elegante::content {
+    content: '◆';
+    color: var(--bordo);
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+.nav-link {
+    color: var(--marron-oscuro) !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--bordo) !important;
+}
+
+.nav-link.active-link {
+    color: var(--bordo) !important;
+    font-weight: 600;
+    border-bottom: 2px solid var(--bordo);
+}
+
+.navbar-curvo {
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom: 2px solid rgba(139, 38, 53, 0.1); /* Línea sutil bordó */
+}
+
+.sticky-top {
+    background-color: rgba(247, 240, 227, 0.95) !important; /* var(--crema) con 95% de opacidad */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* =========================================
+   FORMULARIO
+   ========================================= */
+/* Bootstrap pone bordes azules en los formularios, con esto se lo cambiamos*/
+.form-control:focus {
+    border-color: var(--bordo);
+    box-shadow: 0 0 0 0.25rem rgba(139, 38, 53, 0.25); /* Bordó transparente */
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.arco-superior {
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.borde-playfair {
+    border: 4px solid var(--bordo);
+    outline: 1px solid var(--bordo);
+    outline-offset: -8px;
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+/* =========================================
+   TRANSICIONES DE PÁGINA (PAGE TRANSITIONS)
+   ========================================= */
+
+/* Estado inicial del body para que entre con animación */
+body {
+    animation: fadeInPage 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-out-page {
+    opacity: 0 !important;
+    transform: translateY(-15px) !important;
+    transition: all 0.3s ease-in !important;
+}

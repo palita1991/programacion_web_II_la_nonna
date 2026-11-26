@@ -1,0 +1,12 @@
+{% load static %}
+<footer class="py-5 mt-5 arco-superior" style="background-color: var(--verde-oliva); color: var(--crema);">
+        <div class="container text-center">
+            <h3 style="font-family: 'Playfair Display', serif;">La Nonna</h3>
+            <p class="mb-3">El auténtico sabor artesanal, directo a tu mesa.</p>
+            <div class="mb-3">
+                <a href="{% url 'contacto' %}" class="text-decoration-none" style="color: var(--crema);">Contacto</a> |
+                <a href="{% url 'productos' %}" class="text-decoration-none" style="color: var(--crema);">Productos</a>
+            </div>
+            <small>&copy; 2026 La Nonna Pastas. Todos los derechos reservados.</small>
+        </div>
+    </footer>

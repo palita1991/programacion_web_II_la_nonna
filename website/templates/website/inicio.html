@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inicio | La Nonna {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'website/css/website_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row align-items-center flex-column-reverse flex-lg-row">
+            <div class="col-lg-6 pe-lg-5 mt-5 mt-lg-0 text-center text-lg-start">
+                <span class="subtitulo-seccion">Tradición Familiar</span>
+
+                <h1 class="titulo-hero mt-2 mb-4">El auténtico sabor <br>de casa</h1>
+                <div class="separador-elegante">◆</div>
+
+                <p class="lead mb-5 texto-destacado">
+                    Desde nuestros inicios como un pequeño emprendimiento familiar, en <strong>La Nonna</strong> amasamos cada día con pasión para llevar a tu mesa la verdadera esencia de la cocina artesanal.
+                </p>
+
+                <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                    <a href="{% url 'productos' %}" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm fw-medium">Descubrir Pastas</a>
+                    <a href="{% url 'sobre_nosotros' %}" class="btn btn-outline-dark px-4 py-2 rounded-pill fw-medium">Nuestra Historia</a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <div class="hero-decoracion rounded-4"></div>
+                    <video src="{% static 'website/video/hero-fideos.mp4' %}" autoplay loop muted playsinline class="hero-media rounded-4 shadow"></video>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Valores (Minimalista) -->
+<section class="py-5 bg-blanco">
+    <div class="container py-4">
+        <div class="row text-center g-4">
+            <div class="col-md-4 p-3">
+                <h3 class="h5 mb-3">100% Artesanal</h3>
+                <p class="texto-chico">Elaboradas a mano todos los días, sin conservantes ni procesos industriales.</p>
+            </div>
+            <div class="col-md-4 p-3">
+                <h3 class="h5 mb-3">Receta Original</h3>
+                <p class="texto-chico">Mantenemos intactos los secretos de la abuela para garantizar el sabor clásico.</p>
+            </div>
+            <div class="col-md-4 p-3">
+                <h3 class="h5 mb-3">Ingredientes Frescos</h3>
+                <p class="texto-chico">Seleccionamos cuidadosamente cada materia prima para lograr una calidad premium.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

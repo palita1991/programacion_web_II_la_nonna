@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Eliminar Solicitud | La Nonna{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'website/css/website_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="p-4 p-md-5 rounded-4 shadow-sm bg-blanco borde-playfair text-center">
+                    <i class="bi bi-exclamation-triangle fs-1 texto-error"></i>
+                    <h1 class="h3 fw-bold mt-3 mb-2">¿Eliminar esta solicitud?</h1>
+                    <p class="text-muted texto-chico mb-4">
+                        Vas a eliminar definitivamente la consulta de <strong>{{ solicitud.nombre }}</strong>
+                        ({{ solicitud.categoria }}). Esta acción no se puede deshacer.
+                    </p>
+
+                    <div class="receta-box mb-4">
+                        <p class="texto-chico mb-0">"{{ solicitud.mensaje }}"</p>
+                    </div>
+
+                    <form method="POST" class="d-flex justify-content-center gap-3">
+                        {% csrf_token %}
+                        <a href="{% url 'panel_solicitudes' %}" class="btn btn-outline-dark rounded-pill px-4">Cancelar</a>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4 fw-medium">Sí, eliminar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

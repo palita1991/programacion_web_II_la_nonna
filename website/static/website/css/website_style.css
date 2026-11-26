@@ -1,165 +1,250 @@
-    /* =========================================
-   TIPOGRAFÍA Y TEXTOS REUTILIZABLES
-   ========================================= */
-    .subtitulo-seccion {
-        color: var(--verde-oliva);
-        letter-spacing: 2px;
-        font-size: 0.85rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        display: block;
-    }
+/* =========================================
+TIPOGRAFÍA Y TEXTOS REUTILIZABLES
+========================================= */
+.subtitulo-seccion {
+    color: var(--verde-oliva);
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+}
 
-    .titulo-hero {
-        font-size: 3.5rem;
-        line-height: 1.1;
-        font-weight: bold;
-    }
+.titulo-hero {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: bold;
+}
 
-    .titulo-seccion {
-        font-size: 3rem;
-        font-weight: bold;
-    }
+.titulo-seccion {
+    font-size: 3rem;
+    font-weight: bold;
+}
 
-    .texto-destacado {
-        font-weight: 300;
-        font-size: 1.15rem;
-    }
+.texto-destacado {
+    font-weight: 300;
+    font-size: 1.15rem;
+}
 
-    .texto-limitado {
-        max-width: 600px;
-        margin: 0 auto;
-    }
+.texto-limitado {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-    .texto-chico {
-        font-size: 0.95rem;
-    }
+.texto-chico {
+    font-size: 0.95rem;
+}
 
-    /* =========================================
-   SECCIÓN: INICIO
-   ========================================= */
-    .hero-decoracion {
-        position: absolute;
-        border: 2px solid var(--verde-oliva);
-        z-index: -1;
-        top: 20px;
-        left: -20px;
-        width: 100%;
-        height: 100%;
-    }
+/* =========================================
+SECCIÓN: INICIO
+========================================= */
+.hero-decoracion {
+    position: absolute;
+    border: 2px solid var(--verde-oliva);
+    z-index: -1;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+}
 
-    .hero-media {
-        object-fit: cover;
-        aspect-ratio: 4/3;
-        width: 100%;
-        border: none;
-    }
+.hero-media {
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    width: 100%;
+    border: none;
+}
 
-    /* =========================================
-   SECCIÓN: PRODUCTOS
-   ========================================= */
+/* =========================================
+SECCIÓN: PRODUCTOS
+========================================= */
 
-    .producto-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: none;
-        border-radius: 1rem;
-        background-color: #ffffff;
-    }
+.producto-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 1rem;
+    background-color: #ffffff;
+}
 
-    .producto-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 24px rgba(62, 48, 40, 0.08) !important;
-    }
+.producto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(62, 48, 40, 0.08) !important;
+}
 
-    .img-wrapper {
-        overflow: hidden;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
-        aspect-ratio: 4/3;
-    }
+.img-wrapper {
+    overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    aspect-ratio: 4/3;
+}
 
-    .img-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
-    .producto-card:hover .img-wrapper img {
-        transform: scale(1.05);
-    }
+.producto-card:hover .img-wrapper img {
+    transform: scale(1.05);
+}
 
-    .producto-card .card-body p{
-        font-size: 0.95rem;
-    }
+.producto-card .card-body p {
+    font-size: 0.95rem;
+}
 
-    .receta-box {
-        background-color: rgba(104, 114, 89, 0.08); /* Verde oliva transparente */
-        border-left: 3px solid var(--verde-oliva);
-        padding: 1rem;
-        border-radius: 0 0.5rem 0.5rem 0;
-        text-align: left;
-    }
+.receta-box {
+    background-color: rgba(104, 114, 89, 0.08); /* Verde oliva transparente */
+    border-left: 3px solid var(--verde-oliva);
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    text-align: left;
+}
 
-    .receta-box h4{
-        color: var(--marron-oscuro);
-    }
+.receta-box h4 {
+    color: var(--marron-oscuro);
+}
 
 
-    .btn-outline-bordo {
-        color: var(--bordo);
-        border: 1px solid var(--bordo);
-        background: transparent;
-        transition: all 0.3s ease;
-    }
+.btn-outline-bordo {
+    color: var(--bordo);
+    border: 1px solid var(--bordo);
+    background: transparent;
+    transition: all 0.3s ease;
+}
 
-    .btn-outline-bordo:hover {
-        background-color: var(--bordo);
-        color: var(--crema);
-    }
+.btn-outline-bordo:hover {
+    background-color: var(--bordo);
+    color: var(--crema);
+}
 
-    /* =========================================
-   SECCIÓN: SOBRE NOSOTROS
-   ========================================= */
-    .historia-img {
-        object-fit: cover;
-        aspect-ratio: 5/5;
-        width: 100%;
-    }
+/* =========================================
+SECCIÓN: SOBRE NOSOTROS
+========================================= */
+.historia-img {
+    object-fit: cover;
+    aspect-ratio: 5/5;
+    width: 100%;
+}
 
-    .historia-parrafo {
-        font-size: 1.1rem;
-        font-weight: 300;
-        line-height: 1.8;
-    }
+.historia-parrafo {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
 
-    .bg-oliva {
-        background-color: var(--verde-oliva);
-        color: var(--crema);
-    }
+.bg-oliva {
+    background-color: var(--verde-oliva);
+    color: var(--crema);
+}
 
-    .tarjeta-proceso {
-        border-color: rgba(247, 240, 227, 0.2) !important;
-    }
+.tarjeta-proceso {
+    border-color: rgba(247, 240, 227, 0.2) !important;
+}
 
-    .img-medallon {
-        border-radius: 200px 200px 0 0;
-        box-shadow: 0 15px 30px rgba(62, 48, 40, 0.1);
-    }
+.img-medallon {
+    border-radius: 200px 200px 0 0;
+    box-shadow: 0 15px 30px rgba(62, 48, 40, 0.1);
+}
 
-    /* =========================================
-   SECCIÓN: CONTACTO
-   ========================================= */
-    .contacto-tarjeta-info {
-        background-color: #ffffff;
-        border: 1px solid rgba(62, 48, 40, 0.1);
-    }
+/* =========================================
+SECCIÓN: CONTACTO
+========================================= */
+.contacto-tarjeta-info {
+    background-color: #ffffff;
+    border: 1px solid rgba(62, 48, 40, 0.1);
+}
 
-    .contacto-label {
-        font-weight: 500;
-        font-size: 0.9rem;
-    }
+.contacto-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
 
-    .bg-blanco {
-        background-color: #ffffff;
-    }
+.bg-blanco {
+    background-color: #ffffff;
+}
+
+/* =========================================
+PANEL INTERNO Y ESTADÍSTICAS
+========================================= */
+.stat-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(62, 48, 40, 0.1);
+}
+
+.stat-card-total {
+    background-color: var(--bordo);
+    color: var(--crema);
+    border: none;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    opacity: 0.8;
+    display: block;
+}
+
+.stat-valor {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.panel-tabla thead th {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--marron-oscuro);
+    border-bottom: 2px solid rgba(62, 48, 40, 0.15);
+}
+
+.panel-mensaje {
+    max-width: 320px;
+    word-break: break-word;
+}
+
+.badge-cat {
+    font-weight: 500;
+    padding: 0.45em 0.85em;
+}
+
+.badge-comercial {
+    background-color: rgba(128, 30, 39, 0.12);
+    color: var(--bordo);
+}
+
+.badge-tecnica {
+    background-color: rgba(13, 110, 253, 0.12);
+    color: #0a58ca;
+}
+
+.badge-rrhh {
+    background-color: rgba(104, 114, 89, 0.18);
+    color: var(--verde-oliva);
+}
+
+.badge-general {
+    background-color: rgba(62, 48, 40, 0.1);
+    color: var(--marron-oscuro);
+}
+
+.badge-leida {
+    background-color: var(--verde-oliva);
+    color: var(--crema);
+    font-weight: 500;
+}
+
+.badge-pendiente {
+    background-color: var(--crema);
+    color: var(--marron-oscuro);
+    border: 1px solid rgba(62, 48, 40, 0.25);
+    font-weight: 500;
+}
+
+.texto-error {
+    color: var(--bordo);
+}

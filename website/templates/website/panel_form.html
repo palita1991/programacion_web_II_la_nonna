@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ titulo }} | La Nonna{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'website/css/website_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="mb-4">
+                    <a href="{% url 'panel_solicitudes' %}" class="text-decoration-none text-muted small">
+                        <i class="bi bi-arrow-left me-1"></i> Volver al panel
+                    </a>
+                    <h1 class="titulo-seccion mt-2">{{ titulo }}</h1>
+                    <p class="text-muted texto-chico mb-0">
+                        La categoría se asigna automáticamente según el contenido del mensaje.
+                    </p>
+                </div>
+
+                <div class="p-4 p-md-5 rounded-4 shadow-sm bg-blanco">
+                    <form method="POST" novalidate>
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="{{ form.nombre.id_for_label }}" class="form-label contacto-label">Nombre y apellido</label>
+                            {{ form.nombre }}
+                            {% if form.nombre.errors %}
+                                <div class="mt-1 small fw-bold texto-error">{{ form.nombre.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.email.id_for_label }}" class="form-label contacto-label">Correo electrónico</label>
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <div class="mt-1 small fw-bold texto-error">{{ form.email.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.mensaje.id_for_label }}" class="form-label contacto-label">Mensaje</label>
+                            {{ form.mensaje }}
+                            {% if form.mensaje.errors %}
+                                <div class="mt-1 small fw-bold texto-error">{{ form.mensaje.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-check mb-4">
+                            {{ form.leida }}
+                            <label class="form-check-label contacto-label" for="{{ form.leida.id_for_label }}">
+                                Marcar como leída
+                            </label>
+                        </div>
+
+                        <div class="d-flex gap-2 justify-content-end">
+                            <a href="{% url 'panel_solicitudes' %}" class="btn btn-outline-dark rounded-pill px-4">Cancelar</a>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4 fw-medium">{{ texto_boton }}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'website/js/contacto.js' %}"></script>
+{% endblock %}

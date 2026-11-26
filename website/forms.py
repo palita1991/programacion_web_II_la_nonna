@@ -10,7 +10,7 @@ class ContactoForm(forms.ModelForm):
         widgets = {
             'nombre': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Tu nombre completo',
+                'placeholder': 'Tu nombre y apellido',
             }),
             'email': forms.EmailInput(attrs={
                 'class': 'form-control',
@@ -30,3 +30,12 @@ class ContactoForm(forms.ModelForm):
         if not re.match(r"^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$", nombre):
             raise forms.ValidationError('El nombre no puede contener números ni caracteres especiales.')
         return nombre
+
+
+class SolicitudPanelForm(ContactoForm):
+    class Meta(ContactoForm.Meta):
+        fields = ['nombre', 'email', 'mensaje', 'leida']
+        widgets = {
+            **ContactoForm.Meta.widgets,
+            'leida': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        }

@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class SolicitudContacto(models.Model):
     CATEGORIA_COMERCIAL = 'Consulta Comercial'
@@ -53,3 +53,33 @@ class SolicitudContacto(models.Model):
 
     def __str__(self):
         return f"{self.nombre} ({self.email}) - {self.fecha_envio.strftime('%d/%m/%Y %H:%M')}"
+
+class UsuarioPermitido(models.Model):
+    email = models.EmailField(unique=True, verbose_name="Email permitido")
+    fecha_creacion = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de alta")
+
+    class Meta:
+        verbose_name = "Usuario permitido"
+        verbose_name_plural = "Usuarios permitidos"
+        ordering = ['email']
+
+    def save(self, *args, **kwargs):
+        self.email = self.email.strip().lower()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.email
+
+class CodigoValidacion(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='codigos_validacion')
+    codigo = models.CharField(max_length=6, verbose_name="Código de validación")
+    fecha_creacion = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de emisión")
+    usado = models.BooleanField(default=False, verbose_name="Usado")
+
+    class Meta:
+        verbose_name = "Código de validación"
+        verbose_name_plural = "Códigos de validación"
+        ordering = ['-fecha_creacion']
+
+    def __str__(self):
+        return f"{self.usuario.email} - {self.codigo} ({'Usado' if self.usado else 'Activo'})"

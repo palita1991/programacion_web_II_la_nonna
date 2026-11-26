@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Registro de Usuario | La Nonna{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'website/css/website_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="text-center mb-4">
+                    <span class="subtitulo-seccion">Acceso Clientes</span>
+                    <h1 class="titulo-seccion mt-2">Crear Cuenta</h1>
+                    <p class="text-muted texto-chico mb-0">
+                        El registro está habilitado exclusivamente para correos autorizados.
+                    </p>
+                </div>
+
+                <div class="p-4 p-md-5 rounded-4 shadow-sm bg-blanco">
+                    <form method="POST" novalidate>
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="{{ form.nombre_apellido.id_for_label }}" class="form-label contacto-label">
+                                {{ form.nombre_apellido.label }}
+                            </label>
+                            {{ form.nombre_apellido }}
+                            {% if form.nombre_apellido.errors %}
+                                <div class="mt-1 small fw-bold texto-error">{{ form.nombre_apellido.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.email.id_for_label }}" class="form-label contacto-label">
+                                {{ form.email.label }}
+                            </label>
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <div class="mt-1 small fw-bold texto-error">{{ form.email.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.password1.id_for_label }}" class="form-label contacto-label">
+                                {{ form.password1.label }}
+                            </label>
+                            {{ form.password1 }}
+                            <div class="form-text small">
+                                Debe tener al menos 8 caracteres, combinar letras y números, y no ser una clave común.
+                            </div>
+                            {% if form.password1.errors %}
+                                <div class="mt-1 small fw-bold texto-error">{{ form.password1.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="{{ form.password2.id_for_label }}" class="form-label contacto-label">
+                                {{ form.password2.label }}
+                            </label>
+                            {{ form.password2 }}
+                            {% if form.password2.errors %}
+                                <div class="mt-1 small fw-bold texto-error">{{ form.password2.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-primary rounded-pill py-2 fw-medium shadow-sm">
+                                Registrarse
+                            </button>
+                        </div>
+
+                        <div class="text-center small text-muted">
+                            ¿Ya tenés cuenta?
+                            <a href="{% url 'iniciar_sesion' %}" class="fw-semibold texto-error text-decoration-none">Iniciar sesión</a>
+                            <span class="mx-1">·</span>
+                            <a href="{% url 'validar_cuenta' %}" class="text-muted text-decoration-none">Tengo un código</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
